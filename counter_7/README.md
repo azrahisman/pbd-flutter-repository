@@ -19,3 +19,16 @@ An object with const means that the object will be **determined at compile time*
 
 5. Explain how you implement the checklist above.
 First, I ran flutter create counter_7 in my terminal and I navigated to its directory. I then ran the project via terminal to see its initial state. Then I open the main.dart file and applied the if-else conditions for displaying the "EVEN" or "ODD". I continue by adding the new decrement function and button and for this to be done, I used Row() in the floatingActionButton so that it can hold two buttons. Then I added the final touches of colors before pushing the finalized project to my GitHub repository.
+
+# Assignment 8 Questions
+1.  Explain the difference between Navigator.push and Navigator.pushReplacement.
+Naigator.push() is used to add other routes on top of the current screen stack where new screen is displayed on top of previous screen. Navigator.pushReplacement(), however, replaces the current route of navigator.
+
+2.  List all the widgets you used in this project and explain their functions.
+In this project, I used cards for displaying the inputted data by user. Column, Drawer, and ListTile were used for displaying the hamburger bar. Scaffold is used for overall placement of widgets, and Appbar is used for displaying the blue bar containing title.
+
+3.  Name the types of events that exist in Flutter (example: onPressed).
+For this project, I used onPressed for buttons, and onSaved for forms.
+
+4.  Explain how the Navigator works in "switching" pages of a Flutter application.
+For small apps, Flutter uses Navigator whereas for more complex ones, Flutter uses Router. Navigator displays the screen as stacks and sometimes use MaterialApp.routes parameter for deep links. The downside is Flutter doesn’t support the browser forward button for applications using named routes. Router tackles this with a routing package that is able to parse the route path and configure Navigator.
