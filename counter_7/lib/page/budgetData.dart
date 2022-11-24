@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/addInfo.dart';
+import 'package:counter_7/page/addInfo.dart';
+import 'package:counter_7/page/myWatchlistPage.dart';
 
 class budgetData {
   final String title;
@@ -52,6 +53,16 @@ class MyDataPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const MyDataPage()),
                   );
                 }),
+            ListTile(
+              title: const Text('My Watchlist'),
+              onTap: () {
+                // Routing the menu to the My Watchlist page
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyWatchlistPage()));
+              },
+            )
           ],
         ),
       ),

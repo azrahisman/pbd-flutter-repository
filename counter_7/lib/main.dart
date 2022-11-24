@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/addInfo.dart';
-import 'package:counter_7/budgetData.dart';
+import 'package:counter_7/page/addInfo.dart';
+import 'package:counter_7/page/budgetData.dart';
+import 'package:counter_7/page/myWatchlistPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -118,6 +119,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => const MyDataPage()),
                     );
                   }),
+              ListTile(
+                title: const Text('My Watchlist'),
+                onTap: () {
+                  // Routing the menu to the My Watchlist page
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MyWatchlistPage()));
+                },
+              ),
             ],
           ),
         ),
@@ -151,21 +162,27 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        floatingActionButton: Row(
-          children: <Widget>[
-            FloatingActionButton(
-              // first FAB to perform decrement
-              onPressed: _decrementCounter,
-              tooltip: 'Decrement',
-              child: Icon(Icons.remove),
-            ),
-            FloatingActionButton(
-              // second FAB to perform increment
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: Icon(Icons.add),
-            ),
-          ],
-        ));
+        floatingActionButton: Container(
+            padding: EdgeInsets.only(left: 20.0),
+            width: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                FloatingActionButton(
+                  heroTag: "btn-",
+                  // first FAB to perform decrement
+                  onPressed: _decrementCounter,
+                  tooltip: 'Decrement',
+                  child: Icon(Icons.remove),
+                ),
+                FloatingActionButton(
+                  // second FAB to perform increment
+                  heroTag: "btn+",
+                  onPressed: _incrementCounter,
+                  tooltip: 'Increment',
+                  child: Icon(Icons.add),
+                ),
+              ],
+            )));
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/budgetData.dart';
+import 'package:counter_7/page/budgetData.dart';
+import 'package:counter_7/page/myWatchlistPage.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
@@ -42,7 +43,7 @@ class _MyFormPageState extends State<MyFormPage> {
         child: Column(children: [
           // Adding clickable menu
           ListTile(
-            title: const Text('Counter_7'),
+            title: const Text('Counter'),
             onTap: () {
               // Routing the menu to the main page
               Navigator.pushReplacement(
@@ -70,6 +71,16 @@ class _MyFormPageState extends State<MyFormPage> {
                   MaterialPageRoute(builder: (context) => const MyDataPage()),
                 );
               }),
+          ListTile(
+            title: const Text('My Watchlist'),
+            onTap: () {
+              // Routing the menu to the My Watchlist page
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyWatchlistPage()));
+            },
+          ),
         ]),
       ),
       body: Form(
@@ -132,7 +143,7 @@ class _MyFormPageState extends State<MyFormPage> {
                       // behavior when Amount is typed
                       onSaved: (String? value) {
                         setState(() {
-                          _amount = int.parse(value.toString())!;
+                          _amount = int.parse(value.toString());
                         });
                       },
 
