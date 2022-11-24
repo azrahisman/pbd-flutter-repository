@@ -32,3 +32,16 @@ For this project, I used onPressed for buttons, and onSaved for forms.
 
 4.  Explain how the Navigator works in "switching" pages of a Flutter application.
 For small apps, Flutter uses Navigator whereas for more complex ones, Flutter uses Router. Navigator displays the screen as stacks and sometimes use MaterialApp.routes parameter for deep links. The downside is Flutter doesn’t support the browser forward button for applications using named routes. Router tackles this with a routing package that is able to parse the route path and configure Navigator.
+
+# Assignment 9 Questions
+1.  Can we retrieve JSON data without creating a model first? If yes, is it better than creating a model before retrieving JSON data?
+Yes, we can by using the JSONObject.parse(). It is applicable if we're trying to fetch it from a web service. Using the available resources that allows us to instantly obtain the code for the models (such as QuickType) also makes it easier.
+
+2.  List the widgets that you used in this project and explain their functions.
+Apart from the existing widgets from assignment 8, I added a few more buttons for navigating, and also ListTiles for displaying the movie titles.
+
+3.  Explain the mechanism of retrieving data from json so it can be shown in Flutter.
+It requests the data from the requested web service, then the obtained data will be converted to the models we've created beforehand. The data then can be displayed using the FutureBuilder().
+
+4.  Explain how you implemented the checklist above.
+From previous assignment, I added the new folders for model and page and added each respectives required files (for model and also for displaying data and detailed data). I used the given ways from last week's tutorial using quicktype to quickly get the needed code for my model. I then display the titles only as ListTiles which if clicked will redirect to a more detailed page of the movie title pressed. Here I also used some things I learned from last week's assignment. Then I import more required things including the http (and also adding the needed lines in in the android/app/src/main/AndroidManifest.xml). Then I applied the extra changes for the drawer app and for the most part, that's basically it.
