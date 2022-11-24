@@ -10,7 +10,7 @@ import 'package:counter_7/main.dart';
 class DetailPage extends StatelessWidget {
   const DetailPage({super.key, required this.data});
 
-  final List<MyWatchlist> data;
+  final MyWatchlist data;
 
   @override
   Widget build(BuildContext context) {
@@ -68,20 +68,18 @@ class DetailPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for (int i = 0; i < listMyWatchlist.length; i++)
-              Card(
-                  child: Container(
-                      padding: EdgeInsets.all(10),
-                      width: double.infinity,
-                      child: Column(
-                        children: [
-                          Text(listMyWatchlist[i].fields.title),
-                          Text(listMyWatchlist[i].fields.rating.toString()),
-                          Text(
-                              listMyWatchlist[i].fields.releaseDate.toString()),
-                          Text(listMyWatchlist[i].fields.review)
-                        ],
-                      ))),
+            Card(
+                child: Container(
+                    padding: EdgeInsets.all(10),
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        Text(data.fields.title),
+                        Text(data.fields.rating.toString()),
+                        Text(data.fields.releaseDate.toString()),
+                        Text(data.fields.review)
+                      ],
+                    ))),
             TextButton(
                 child: const Text(
                   "Back",
